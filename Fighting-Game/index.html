@@ -1,87 +1,35 @@
 <head>
-    
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fighting Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- red container div -->
-    <div style="position: relative; display: inline-block">
-        <!-- smaller red container div -->
-        <div 
-            style="
-                position: absolute; 
-                display: flex; 
-                width: 100%; 
-                align-items: center;
-                padding: 20px;
-            "
-        >
+    <!-- game container -->
+    <div class="game-container">
+        <!-- HUD: health bars and timer -->
+        <div class="hud">
             <!-- player health -->
-            <div style = "position: relative; height: 30px; width: 100%; display: flex; justify-content: flex-end">
-                <div style="background-color: yellow; height: 30px; width: 100%"></div>
-                <div 
-                    id="playerHealth"
-                    style="
-                        position: absolute; 
-                        background: blue; 
-                        top: 0; right: 0; 
-                        bottom: 0; 
-                        width: 100%
-                    "
-                ></div>
+            <div class="health-bar-wrapper player">
+                <div class="health-bar-background"></div>
+                <div id="playerHealth" class="health-bar player"></div>
             </div>
 
             <!-- timer -->
-            <div 
-                id="timer"
-                style="
-                    background-color: red; 
-                    width: 100px; 
-                    height: 100px; 
-                    flex-shrink: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                "
-            >
-                10
-            </div>
+            <div id="timer">10</div>
+
             <!-- enemy health -->
-            <div style = "position: relative; height: 30px; width: 100%">
-                <div style="background-color: yellow; height: 30px"></div>
-                <div 
-                    id="enemyHealth"
-                    style="
-                        position: absolute; 
-                        background: blue; 
-                        top: 0; right: 0; 
-                        bottom: 0; 
-                        left: 0;
-                    "
-                ></div>
+            <div class="health-bar-wrapper">
+                <div class="health-bar-background"></div>
+                <div id="enemyHealth" class="health-bar enemy"></div>
             </div>
-            <div></div>
         </div>
-        <div 
-            id="displayText"
-            style="
-                position: absolute; 
-                color: white; 
-                align-items: center; 
-                justify-content: center;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                display: none;
-            "
-        >
-            Tie
-        </div>
+
+        <!-- game over / winner display -->
+        <div id="displayText">Tie</div>
+
+        <!-- canvas for rendering -->
         <canvas></canvas>
     </div>
     
