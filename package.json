@@ -1,0 +1,11 @@
+{
+  "name": "fighting-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small HTML5 Canvas fighting game demo",
+  "scripts": {
+    "start": "npx http-server Fighting-Game -c-1 -p 8080"
+  },
+  "author": "",
+  "license": "MIT"
+}
